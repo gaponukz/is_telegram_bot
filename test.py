@@ -1,9 +1,9 @@
 import itertools
 
 output_data: list[list[bool]] = []
-metric_data = ['avatar', 'username', 'lastname', 'bio', 'url_in_bio', 'message']
+metric_data = ['avatar', 'username', 'lastname', 'bio', 'url_in_bio']
 
-for item in itertools.product([0, 1], repeat=6):
+for item in itertools.product([0, 1], repeat=5):
     item = list(item)
     string = '; '.join([f"{metric_data[i]}{'+' if item[i] else '-'}" for i in range(len(item))]) + " : "
     item.append(int(bool(input(string))))
